@@ -4,6 +4,9 @@ import java.util.regex.Pattern;
 import ru.testproject.calculator.other.*;
 import ru.testproject.calculator.logic.*;
 
+/**
+ * Класс обёртка для валидации ввода
+ */
 public class ValidateExpressionInput implements Input {
     private Input input;
     private DigitsType digitsType = new DigitsType();
@@ -17,6 +20,12 @@ public class ValidateExpressionInput implements Input {
         return validateExpression(input.askExpression(question));
     }
 
+    /**
+     * Валидация введенны данных для определения типа
+     * @param expression введенное выражение
+     * @return если выражение валидно
+     * @throws QuitException обработка выхода из программы
+     */
     private String validateExpression(String expression) throws QuitException {
         if(expression.contains(Constants.EXIT)){
             throw new QuitException();

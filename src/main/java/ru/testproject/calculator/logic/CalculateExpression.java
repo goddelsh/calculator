@@ -2,12 +2,15 @@ package ru.testproject.calculator.logic;
 
 import ru.testproject.calculator.other.Constants;
 
-public class CalculateExpression {
+class CalculateExpression {
     private String symbol = null;
     private String first = "";
     private String second = "";
 
-
+    /**
+     * Конструктор парсящий полученое выражение
+     * @param expression
+     */
     public CalculateExpression(String expression){
         String[] expressionByElements = expression.split("");
         int index = 0;
@@ -27,11 +30,18 @@ public class CalculateExpression {
     }
 
 
-
+    /**
+     * Получение математического знака выражения
+     * @return
+     */
     String getSymbol() {
         return symbol;
     }
 
+    /**
+     * Левое значение
+     * @return
+     */
     Integer getFirst() {
         Integer result = DigitsType.parse(first);
         if (result > 10) {
@@ -40,6 +50,10 @@ public class CalculateExpression {
         return result;
     }
 
+    /**
+     * Правое значение
+     * @return
+     */
     Integer getSecond() {
         Integer result = DigitsType.parse(second);
         if (result > 10) {

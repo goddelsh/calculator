@@ -2,7 +2,13 @@ package ru.testproject.calculator.logic;
 
 import ru.testproject.calculator.other.Constants;
 
+/**
+ * Класс преобразования вводимых данных в числа для операций
+ */
 public class DigitsType {
+    /**
+     * singleton для обработки стилей цифр
+     */
     public static DigitsType digitsType = new DigitsType();
 
     public DigitStyle digitStyle = null;
@@ -15,6 +21,11 @@ public class DigitsType {
         digitsType.digitStyle = digitStyle;
     }
 
+    /**
+     * Парсинг вводимых данных исходя из стиля цифр
+     * @param number
+     * @return
+     */
     public static Integer parse(String number) {
         Integer result = -1;
         if (digitsType.digitStyle != null) {
@@ -34,6 +45,11 @@ public class DigitsType {
         return result;
     }
 
+    /**
+     * Конвертация результата вычеслений исходя из стиля цифр
+     * @param expressionResult
+     * @return
+     */
     public static String convert(Integer expressionResult) {
         String result = "";
         if (digitsType.digitStyle != null) {
@@ -62,8 +78,6 @@ public class DigitsType {
 
     private static Integer parseRome(String number){
         Integer result = 0;
-        int pos = 0;
-
         RomanNumerals[] romanNumerals = RomanNumerals.values();
         int index = romanNumerals.length - 1;
         while((number.length() > 0)&&(index >= 0)) {
@@ -74,23 +88,6 @@ public class DigitsType {
                 index--;
             }
         }
-
-
-/*
-       Integer romeIndex = RomanNumerals.values().length - 1;
-        while(romeIndex >= 0 && pos < number.length()){
-            Integer romanElementLength = RomanNumerals.values()[romeIndex].getAlias().length();
-            System.out.println(number.substring(pos, romanElementLength));
-            if((romanElementLength <= number.length())&&(number.substring(pos, romanElementLength).contains(RomanNumerals.values()[romeIndex].getAlias()))){
-                result += RomanNumerals.values()[romeIndex].getValue();
-                pos += RomanNumerals.values()[romeIndex].getAlias().length();
-            }else{
-                romeIndex--;
-            }
-        }
-*/
-
-
         return result;
     }
 

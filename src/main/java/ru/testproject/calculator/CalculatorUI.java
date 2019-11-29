@@ -4,7 +4,19 @@ import ru.testproject.calculator.input.*;
 import ru.testproject.calculator.logic.*;
 import ru.testproject.calculator.other.*;
 
+/**
+ * Тестовое задание калькулятор
+ * @author Ruslan Gadelshin
+ * @since 29.11.2019
+*/
+
+
 public class CalculatorUI {
+    /**
+     * Метод инициализации интерфейса
+     * @param input поток ввода
+     * @param action обработчик
+     */
     void init(Input input, Calculate action){
         boolean active = true;
         this.showRules();
@@ -33,9 +45,6 @@ public class CalculatorUI {
         Input input = new ConsoleInput();
         ValidateExpressionInput validateInput = new ValidateExpressionInput(input);
         Calculate calc = new Calculate();
-        //DigitsType digitsType = new DigitsType();
-      //I  digitsType.setDigitStyle(DigitStyle.ARABIC);
-       // digitsType.setDigitStyle(DigitStyle.ROMAN);
         new CalculatorUI().init(validateInput, calc);
     }
 }

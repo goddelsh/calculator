@@ -1,5 +1,8 @@
 package ru.testproject.calculator.other;
 
+/**
+ * Константы
+ */
 public class Constants {
     public static final String mainText = "Калькулятор для римских и арабских цифр";
     public static final String ruleText = "Цифры могут быть либо римские либо арабские. Каждая цифра не должна быть больше 10. \n" +
