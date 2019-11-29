@@ -25,6 +25,7 @@ public class CalculatorUI {
             try{
                 result = action.action(input, Constants.tryText);
             }catch(IllegalStateException ex){
+                active = false;
                 result = ex.getLocalizedMessage();
             }catch(QuitException quit){
                 active = false;
