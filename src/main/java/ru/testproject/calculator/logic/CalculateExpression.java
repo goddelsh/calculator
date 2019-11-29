@@ -1,5 +1,7 @@
 package ru.testproject.calculator.logic;
 
+import ru.testproject.calculator.other.Constants;
+
 public class CalculateExpression {
     private String symbol = null;
     private String first = "";
@@ -33,7 +35,7 @@ public class CalculateExpression {
     Integer getFirst() {
         Integer result = DigitsType.parse(first);
         if (result > 10) {
-            throw new IllegalStateException("out of the maximum range");
+            throw new IllegalStateException(Constants.ERROR_limits);
         }
         return result;
     }
@@ -41,7 +43,7 @@ public class CalculateExpression {
     Integer getSecond() {
         Integer result = DigitsType.parse(second);
         if (result > 10) {
-            throw new IllegalStateException("out of the maximum range");
+            throw new IllegalStateException(Constants.ERROR_limits);
         }
         return result;
     }

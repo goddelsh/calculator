@@ -1,5 +1,7 @@
 package ru.testproject.calculator.logic;
 
+import ru.testproject.calculator.other.Constants;
+
 public class DigitsType {
     public static DigitsType digitsType = new DigitsType();
 
@@ -27,7 +29,7 @@ public class DigitsType {
 
             }
         }else{
-            throw new IllegalStateException("without digit type");
+            throw new IllegalStateException(Constants.ERROR_wrongDigitType);
         }
         return result;
     }
@@ -46,7 +48,7 @@ public class DigitsType {
 
             }
         }else{
-            throw new IllegalStateException("without digit type");
+            throw new IllegalStateException(Constants.ERROR_wrongDigitType);
         }
         return result;
     }
