@@ -10,9 +10,14 @@ public class Constants {
 
     public static final String ERROR_wrongDigitType = "Неверный тип цифр";
     public static final String ERROR_limits = "Слишком большие числа";
+    public static final String ERROR_incorrectExpression = "Неверный формат выражения";
 
     public static final String PLUS = "+";
     public static final String MINUS = "-";
     public static final String MULTIPLY = "*";
     public static final String DEVIDE = "/";
+    public static final String EXIT = "q";
+
+    public static final String ARABIC_REGEX = "^[0-9]{1,2}[*-\\/+]{1}[0-9]{1,2}$";
+    public static final String ROMAN_REGEX = "^(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})[*-\\/+]{1}(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$";
 }

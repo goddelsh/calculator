@@ -9,7 +9,7 @@ public class CalculatorUI {
         boolean active = true;
         this.showRules();
         while(active){
-            String result = "";
+            String result;
             try{
                 result = action.action(input, Constants.tryText);
             }catch(IllegalStateException ex){
@@ -31,10 +31,11 @@ public class CalculatorUI {
 
     public static void main(String[] args) {
         Input input = new ConsoleInput();
+        ValidateExpressionInput validateInput = new ValidateExpressionInput(input);
         Calculate calc = new Calculate();
-        DigitsType digitsType = new DigitsType();
+        //DigitsType digitsType = new DigitsType();
       //I  digitsType.setDigitStyle(DigitStyle.ARABIC);
-        digitsType.setDigitStyle(DigitStyle.ROMAN);
-        new CalculatorUI().init(input, calc);
+       // digitsType.setDigitStyle(DigitStyle.ROMAN);
+        new CalculatorUI().init(validateInput, calc);
     }
 }
